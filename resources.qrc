@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>Resources/author (2).png</file>
+        <file>Resources/author.png</file>
+        <file>Resources/book (2).png</file>
+        <file>Resources/book.png</file>
+        <file>Resources/bookshelf (2).png</file>
+        <file>Resources/bookshelf.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>mainwindow.qml</file>
+    </qresource>
+</RCC>
