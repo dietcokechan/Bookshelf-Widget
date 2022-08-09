@@ -7,7 +7,7 @@ editwindow::editwindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Edit...");
-    this->setFixedSize(800, 675);
+    this->setFixedSize(800, 550);
 }
 
 editwindow::~editwindow()
