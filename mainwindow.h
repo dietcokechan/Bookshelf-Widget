@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "addbook.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,8 +18,6 @@ public:
 
 
 private slots:
-    void on_actionAdd_Book_triggered();
-
     void on_actionEdit_Books_triggered();
 
 private:
