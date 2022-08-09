@@ -15,8 +15,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-
-
 private slots:
     void on_actionEdit_Books_triggered();
 
