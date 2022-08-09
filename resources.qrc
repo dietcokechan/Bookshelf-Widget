@@ -7,7 +7,5 @@
         <file>Resources/bookshelf (2).png</file>
         <file>Resources/bookshelf.png</file>
     </qresource>
-    <qresource prefix="/">
-        <file>mainwindow.qml</file>
-    </qresource>
+    <qresource prefix="/"/>
 </RCC>
