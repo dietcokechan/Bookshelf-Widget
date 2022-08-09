@@ -1,6 +1,6 @@
 #include "mainwindow.h"
-#include "ui_editwindow.h"
 #include "ui_mainwindow.h"
+#include "editwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,6 +19,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionEdit_Books_triggered()
 {
-
+    editwindow editWin;
+    editWin.setModal(true);
+    editWin.exec();
 }
-
