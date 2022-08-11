@@ -210,7 +210,7 @@ border-radius: 30px;</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QWidget" name="gridLayoutWidget_2">
+    <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -219,7 +219,11 @@ border-radius: 30px;</string>
        <height>311</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2"/>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTableView" name="tableView"/>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QLabel" name="label">
