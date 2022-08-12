@@ -6,9 +6,9 @@ editwindow::editwindow(QWidget *parent) :
     ui(new Ui::editwindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Edit...");
-    this->setWindowIcon(QIcon(":/Icons/author (2).png"));
-    this->setFixedSize(800, 550);
+    this->setWindowTitle("Add...");
+    this->setWindowIcon(QIcon(":/Icons/book (2).png"));
+    this->setFixedSize(400, 400);
 }
 
 editwindow::~editwindow()

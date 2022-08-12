@@ -16,7 +16,8 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionEdit_Books_triggered();
+
+    void on_actionAdd_triggered();
 
 private:
     Ui::MainWindow *ui;

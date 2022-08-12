@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Window Settings
     this->setWindowTitle("Bookshelf");
     this->setWindowIcon(QIcon(":/Icons/bookshelf (2).png"));
-    this->setFixedSize(1313, 713);
+    this->setFixedSize(600, 800);
 }
 
 MainWindow::~MainWindow()
@@ -20,9 +20,10 @@ MainWindow::~MainWindow()
 }
 
 // Opens editing dialog window
-void MainWindow::on_actionEdit_Books_triggered()
+void MainWindow::on_actionAdd_triggered()
 {
     editwindow editWin;
     editWin.setModal(true);
     editWin.exec();
 }
+
