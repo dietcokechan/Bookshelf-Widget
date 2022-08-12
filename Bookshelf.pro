@@ -10,14 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     bookmodel.cpp \
-    bookview.cpp \
     editwindow.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     bookmodel.h \
-    bookview.h \
     editwindow.h \
     mainwindow.h
 
