@@ -54,12 +54,28 @@ border-radius: 30px;</string>
        <x>10</x>
        <y>10</y>
        <width>561</width>
-       <height>651</height>
+       <height>673</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QTableView" name="tableView"/>
+       <widget class="QTableView" name="tableView">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>580</width>
+          <height>670</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(89, 59, 2);</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
