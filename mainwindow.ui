@@ -54,7 +54,7 @@ border-radius: 30px;</string>
        <x>10</x>
        <y>10</y>
        <width>561</width>
-       <height>673</height>
+       <height>651</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -73,7 +73,7 @@ border-radius: 30px;</string>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: rgb(89, 59, 2);</string>
+         <string notr="true">color: rgb(242, 237, 228);</string>
         </property>
        </widget>
       </item>
@@ -130,34 +130,61 @@ border-radius: 5px;</string>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>20</height>
+    </rect>
    </property>
-   <property name="movable">
-    <bool>false</bool>
-   </property>
-   <property name="floatable">
-    <bool>false</bool>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionAdd"/>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionAdd"/>
+    <addaction name="actionEdit"/>
+    <addaction name="actionDelete"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/logout.png</normaloff>:/Icons/logout.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/remove.png</normaloff>:/Icons/remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete...</string>
+   </property>
+  </action>
   <action name="actionAdd">
    <property name="icon">
     <iconset resource="resources.qrc">
-     <normaloff>:/Icons/book (2).png</normaloff>:/Icons/book (2).png</iconset>
+     <normaloff>:/Icons/plus.png</normaloff>:/Icons/plus.png</iconset>
    </property>
    <property name="text">
     <string>Add...</string>
    </property>
-   <property name="toolTip">
-    <string>Add</string>
+  </action>
+  <action name="actionEdit">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Icons/edit.png</normaloff>:/Icons/edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit...</string>
    </property>
   </action>
  </widget>
