@@ -1,7 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "editwindow.h"
-#include "bookmodel.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -14,31 +12,34 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowIcon(QIcon(":/Icons/bookshelf (2).png"));
     this->setFixedSize(600, 800);
 
-    // Instatiate book model class
-    BookModel *bookModel = new BookModel(this);
+    // SQLite connection
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("C:/Databases/books.db");
+    db.open();
+
+    if(!db.open())
+        qInfo() << "---- Not connected ----";
+    else
+        qInfo() << "---- Connected ----";
+
+    qDebug()  <<  QSqlDatabase::drivers();
+
+    // View data from database
+    QSqlTableModel *bookModel = new QSqlTableModel(this, db);
+    bookModel->setTable("books");
+    bookModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    bookModel->select();
+
+    // View data from database
+    bookModel->setTable("books");
+    bookModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    bookModel->select();
+
     ui->tableView->setModel(bookModel);
 
-    // Headers
-    QList<QString> title;
-    QList<QString> author;
-    QList<QString> genre;
-
-    // Mock data
-    title.append("Sharp Objects");
-    title.append("Before the Coffee Gets Cold");
-    title.append("The Bell Jar");
-    author.append("Gillian Flynn");
-    author.append("Toshikazu Kawaguchi");
-    author.append("Sylvia Plath");
-    genre.append("Drama");
-    genre.append("Sci-Fi");
-    genre.append("Novel");
-
-    // Populate with mock data
-    bookModel->populateData(title, author, genre);
-
-    // Shows horizontal header
-    ui->tableView->horizontalHeader()->setVisible(true);
+    // Hide headers
+    ui->tableView->horizontalHeader()->setVisible(false);
+    ui->tableView->verticalHeader()->setVisible(false);
     ui->tableView->show();
 
     // Stretches columns
@@ -51,12 +52,4 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-// Opens editing dialog window
-void MainWindow::on_actionAdd_triggered()
-{
-    editwindow editWin;
-    editWin.setModal(true);
-    editWin.exec();
 }
