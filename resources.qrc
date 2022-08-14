@@ -1,12 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>Icons/author (2).png</file>
-        <file>Icons/book (2).png</file>
         <file>Icons/bookshelf (2).png</file>
-    </qresource>
-    <qresource prefix="/books">
-        <file>Images/395040.jpg</file>
-        <file>Images/18045891.jpg</file>
-        <file>Images/50991951.jpg</file>
+        <file>Icons/edit.png</file>
+        <file>Icons/logout.png</file>
+        <file>Icons/plus.png</file>
+        <file>Icons/remove.png</file>
     </qresource>
 </RCC>
