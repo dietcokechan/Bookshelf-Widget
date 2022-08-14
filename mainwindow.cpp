@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Headers
     QList<QString> title;
     QList<QString> author;
+    QList<QString> genre;
 
     // Mock data
     title.append("Sharp Objects");
@@ -29,9 +30,12 @@ MainWindow::MainWindow(QWidget *parent)
     author.append("Gillian Flynn");
     author.append("Toshikazu Kawaguchi");
     author.append("Sylvia Plath");
+    genre.append("Drama");
+    genre.append("Sci-Fi");
+    genre.append("Novel");
 
     // Populate with mock data
-    bookModel->populateData(title, author);
+    bookModel->populateData(title, author, genre);
 
     // Shows horizontal header
     ui->tableView->horizontalHeader()->setVisible(true);
@@ -39,6 +43,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Stretches columns
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    // Disallows editing in table
+    ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 MainWindow::~MainWindow()

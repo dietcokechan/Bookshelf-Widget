@@ -6,12 +6,14 @@ BookModel::BookModel(QObject *parent)
 
 }
 
-void BookModel::populateData(const QList<QString> &title,const QList<QString> &author)
+void BookModel::populateData(const QList<QString> &title,const QList<QString> &author, const QList<QString> &genre)
 {
     tm_title.clear();
     tm_title = title;
     tm_author.clear();
     tm_author = author;
+    tm_genre.clear();
+    tm_genre = genre;
     return;
 }
 
@@ -24,7 +26,7 @@ int BookModel::rowCount(const QModelIndex &parent) const
 int BookModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return 2;
+    return 3;
 }
 
 QVariant BookModel::data(const QModelIndex &index, int role) const
@@ -36,6 +38,8 @@ QVariant BookModel::data(const QModelIndex &index, int role) const
         return tm_title[index.row()];
     } else if (index.column() == 1) {
         return tm_author[index.row()];
+    } else if(index.column() == 2) {
+        return tm_genre[index.row()];
     }
     return QVariant();
 }
@@ -47,6 +51,8 @@ QVariant BookModel::headerData(int section, Qt::Orientation orientation, int rol
             return QString("Title");
         } else if (section == 1) {
             return QString("Author");
+        } else if (section == 2) {
+            return QString("Genre");
         }
     }
     return QVariant();

@@ -11,10 +11,10 @@ public:
     explicit BookModel(QObject *parent = nullptr);
 
     // populate data
-    void populateData(const QList<QString> &title,const QList<QString> &author);
+    void populateData(const QList<QString> &title,const QList<QString> &author, const QList<QString> &genre);
 
     //Header corresponding to attribute (list header)
-    const QStringList headers = {"title", "author"};
+    const QStringList headers = {"Title", "Author", "Genre"};
 
     // Header:
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
@@ -26,11 +26,10 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 private:
-    QVector<BookModel> bookList;
-
     //Attributes of a Book
     QList<QString> tm_title;
     QList<QString> tm_author;
+    QList<QString> tm_genre;
 };
 
 #endif // BOOKMODEL_H
