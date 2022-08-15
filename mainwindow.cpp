@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "addbook.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -13,7 +14,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(600, 800);
 
     // SQLite connection
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("C:/Databases/books.db");
     db.open();
 
@@ -47,9 +47,57 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Disallows editing in table
     ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_actionAdd_triggered()
+{
+    AddBook addBook(this);
+    addBook.setModal(true);
+    addBook.exec();
+}
+
+void MainWindow::on_actionQuit_triggered()
+{
+    QApplication::quit();
+}
+
+
+void MainWindow::on_actionEdit_toggled(bool editMode)
+{
+    if(editMode)
+    {
+        ui->tableView->setEditTriggers(QAbstractItemView::AllEditTriggers);
+    } else {
+        // Disallows editing in table
+        ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    }
+}
+
+void MainWindow::on_actionDelete_triggered()
+{
+    // TODO IMPLEMENT DELETE
+}
+
+
+void MainWindow::on_pushButton_2_pressed()
+{
+    ui->tableView->hide();
+}
+
+void MainWindow::on_pushButton_2_released()
+{
+    ui->tableView->show();
+}
+
+
+void MainWindow::on_pushButton_clicked()
+{
+    // TODO IMPLEMENT SEARCH
+}
+
