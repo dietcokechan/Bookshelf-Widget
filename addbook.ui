@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>292</width>
-    <height>139</height>
+    <height>111</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <x>10</x>
      <y>10</y>
      <width>271</width>
-     <height>81</height>
+     <height>51</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout_2">
@@ -64,32 +64,13 @@ border-radius: 5px;</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_6">
-      <property name="styleSheet">
-       <string notr="true">color: rgb(89, 59, 2);</string>
-      </property>
-      <property name="text">
-       <string>Genre</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="t_genre">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(81, 115, 105);
-color: rgb(242, 237, 228);
-border-radius: 5px;</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>100</y>
+     <y>70</y>
      <width>80</width>
      <height>31</height>
     </rect>

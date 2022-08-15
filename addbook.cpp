@@ -17,20 +17,17 @@ AddBook::~AddBook()
 void AddBook::on_pushButton_clicked()
 {
     // SQLite connection
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("C:/Databases/books.db");
     db.open();
 
-    QString title, author, genre;
+    QString title, author;
     title = ui->t_title->text();
     author = ui->t_author->text();
-    genre = ui->t_genre->text();
 
-    QSqlQuery query;
-    query.exec("INSERT INTO BOOKS (TITLE, AUTHOR, GENRE)"
-               "VALUES ('"+title+"', '"+author+"', '"+genre+"')");
-
-    query = QSqlQuery(db);
+    QSqlQuery query = QSqlQuery(db);;
+    query.exec("INSERT INTO BOOKS (TITLE, AUTHOR)"
+               "VALUES ('"+title+"', '"+author+"')");
 
     db.close();
+    this->accept();
 }

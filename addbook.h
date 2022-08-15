@@ -21,6 +21,8 @@ private slots:
 
 private:
     Ui::AddBook *ui;
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 };
 
 #endif // ADDBOOK_H
