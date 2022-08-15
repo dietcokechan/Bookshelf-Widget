@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(600, 800);
 
     // SQLite connection
+    db = QSqlDatabase::addDatabase("QSQLITE", "SQLite");
     db.setDatabaseName("C:/Databases/books.db");
-    db.open();
 
     if(!db.open())
         qInfo() << "---- Not connected ----";
@@ -26,12 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // View data from database
     QSqlTableModel *bookModel = new QSqlTableModel(this, db);
-    bookModel->setTable("books");
-    bookModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
-    bookModel->select();
-
-    // View data from database
-    bookModel->setTable("books");
+    bookModel->setTable("Books");
     bookModel->setEditStrategy(QSqlTableModel::OnManualSubmit);
     bookModel->select();
 
@@ -47,7 +42,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Disallows editing in table
     ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
 }
 
 MainWindow::~MainWindow()
@@ -88,6 +82,7 @@ void MainWindow::on_actionDelete_triggered()
 void MainWindow::on_pushButton_2_pressed()
 {
     ui->tableView->hide();
+    ui->tableView->viewport()->repaint();
 }
 
 void MainWindow::on_pushButton_2_released()

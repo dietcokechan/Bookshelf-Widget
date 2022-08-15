@@ -21,8 +21,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-
 private slots:
     void on_actionAdd_triggered();
 
@@ -41,6 +39,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     bool editMode;
-
+    QSqlDatabase db;
 };
 #endif // MAINWINDOW_H
